@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Star, ShieldCheck, Truck, MessageCircle, ShoppingCart, Car, User, Phone, MapPin } from 'lucide-react';
 import { BRANDS, WHATSAPP_NUMBER } from '../data/products';
+import { getAssetUrl } from '../utils/image';
 
 export default function ProductModal({ product, onClose, onAddToCart, selectedVehicle }) {
   if (!product) return null;
@@ -73,7 +74,7 @@ export default function ProductModal({ product, onClose, onAddToCart, selectedVe
           <div className="md:col-span-5 space-y-3">
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
               <img
-                src={activeImage}
+                src={getAssetUrl(activeImage)}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
@@ -95,7 +96,7 @@ export default function ProductModal({ product, onClose, onAddToCart, selectedVe
                       activeImage === img ? 'border-red-600 scale-105' : 'border-slate-200 opacity-60'
                     }`}
                   >
-                    <img src={img} alt="معاينة" className="w-full h-full object-cover" />
+                    <img src={getAssetUrl(img)} alt="معاينة" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>

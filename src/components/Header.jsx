@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShoppingCart, ShieldCheck, Truck, MessageCircle, Menu, X, Search } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '../data/products';
+import { getAssetUrl } from '../utils/image';
 
 export default function Header({ cartCount, onOpenCart, onSelectCategory, activeCategory, searchCar, setSearchCar }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function Header({ cartCount, onOpenCart, onSelectCategory, active
         {/* Official Brand Logo */}
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => onSelectCategory('all')}>
           <img
-            src="/images/logo.png"
+            src={getAssetUrl('/images/logo.png')}
             alt="Casablanca Auto Accessories"
             className="h-12 w-auto object-contain hover:scale-102 transition-transform"
           />

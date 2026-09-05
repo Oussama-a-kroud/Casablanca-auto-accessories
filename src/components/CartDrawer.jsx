@@ -64,7 +64,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onRemoveItem, onChec
                 >
                   <div className="flex items-center gap-3 min-w-0 flex-1">
                     <img
-                      src={item.image}
+                      src={getAssetUrl(item.image)}
                       alt={item.name}
                       className="w-14 h-14 rounded-lg object-cover border border-slate-200 shrink-0"
                     />

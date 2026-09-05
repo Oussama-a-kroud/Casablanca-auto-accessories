@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import VehicleSelector from './VehicleSelector';
+import { getAssetUrl } from '../utils/image';
 
 export default function Hero({ onFilterVehicle }) {
   return (
@@ -53,7 +54,7 @@ export default function Hero({ onFilterVehicle }) {
               
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-white border border-slate-200">
                 <img
-                  src="/images/tapis_3d_real.jpg"
+                  src={getAssetUrl('/images/tapis_3d_real.jpg')}
                   alt="طابيات 7D على المقاس"
                   className="w-full h-full object-cover"
                 />

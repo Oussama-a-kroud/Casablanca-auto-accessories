@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star, ShoppingCart, MessageCircle, Check } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '../data/products';
+import { getAssetUrl } from '../utils/image';
 
 export default function ProductCard({ product, onSelectProduct, onQuickBuy, onAddToCart, selectedVehicle }) {
   const whatsappText = encodeURIComponent(
@@ -14,7 +15,7 @@ export default function ProductCard({ product, onSelectProduct, onQuickBuy, onAd
       {/* Image Container */}
       <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden cursor-pointer" onClick={() => onSelectProduct(product)}>
         <img
-          src={product.image}
+          src={getAssetUrl(product.image)}
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />

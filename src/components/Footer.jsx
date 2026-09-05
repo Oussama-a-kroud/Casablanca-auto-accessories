@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, MapPin, MessageCircle, ShieldCheck } from 'lucide-react';
 import { WHATSAPP_NUMBER, DISPLAY_PHONE } from '../data/products';
+import { getAssetUrl } from '../utils/image';
 
 export default function Footer({ onSelectCategory }) {
   return (
@@ -12,7 +13,7 @@ export default function Footer({ onSelectCategory }) {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <img
-                src="/images/logo.png"
+                src={getAssetUrl('/images/logo.png')}
                 alt="Casablanca Auto Accessories"
                 className="h-12 w-auto bg-white p-1 rounded-lg"
               />
