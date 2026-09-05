@@ -11,9 +11,12 @@ export const BRANDS = [
   { id: 'audi', name: 'أودي (Audi)', logo: '💍' },
   { id: 'skoda', name: 'شكودا (Škoda)', logo: '🚗' },
   { id: 'seat', name: 'سيات (SEAT)', logo: '🏎️' },
+  { id: 'bmw', name: 'بي إم دبليو (BMW)', logo: '⚡' },
   { id: 'ford', name: 'فورد (Ford)', logo: '🚙' },
   { id: 'citroen', name: 'سيتروين (Citroën)', logo: '🚗' },
-  { id: 'honda', name: 'هوندا (Honda)', logo: '🚘' }
+  { id: 'honda', name: 'هوندا (Honda)', logo: '🚘' },
+  { id: 'haval', name: 'هافال (Haval)', logo: '🚘' },
+  { id: 'byd', name: 'بي واي دي (BYD)', logo: '⚡' }
 ];
 
 export const CAR_MODELS = {
@@ -21,17 +24,20 @@ export const CAR_MODELS = {
     'دوكر / إكسبريس (Dokker / Express)',
     'دوستر 1 (Duster 2010 - 2017)',
     'دوستر 2 (Duster 2018 - 2024)',
-    'دوستر 3 (Duster 2025 - 2026)'
+    'دوستر 3 (Duster 2025 - 2026)',
+    'سانديرو 1 (Sandero 2006 - 2021)',
+    'سانديرو 2 (Sandero 2022 - 2026)',
+    'جوجر (Jogger)'
   ],
   renault: [
+    'إكسبريس (Express)',
     'كليو 4 (Clio 4)',
-    'كليو 5 (Clio 5)',
-    'إكسبريس (Express)'
+    'كليو 5 (Clio 5)'
   ],
   peugeot: [
+    '208 (2022+)',
     '301 (2014 - 2021)',
     '301 (2020+)',
-    '208 (2022+)',
     '308 (2020+)',
     '3008 (2019+)',
     'بارتنر تيبي (Partner Tepee 2010 - 2020)',
@@ -40,18 +46,25 @@ export const CAR_MODELS = {
   ],
   volkswagen: [
     'جولف 4 (Golf 4)',
+    'جولف 5 (Golf 5)',
     'جولف 7 (Golf 7)',
+    'جيتا (Jetta)',
+    'تي-روك (T-Roc)',
+    'باسات CC (Passat CC)',
+    'باسات B7 (Passat B7)',
+    'باسات B8 (Passat B8)',
     'كادي (Caddy 2023+)',
     'تيجوان (Tiguan 2015 - 2023)'
   ],
   hyundai: [
     'أكسنت (Accent 2012 - 2018)',
-    'توسان / أكسنت (Tucson / Accent 2023+)',
+    'توسان (Tucson 2023+)',
+    'كريتا (Creta 2020 - 2026)',
     'سانتافي (Santa Fe 2013 - 2021)',
     'سانتافي (Santa Fe 2020 - 2023)'
   ],
   mercedes: [
-    'كلاس C (Mercedes W203)',
+    'كلاس C W203 (Mercedes W203)',
     'كلاس C (Mercedes W204 / W205 / W206)'
   ],
   nissan: [
@@ -62,25 +75,48 @@ export const CAR_MODELS = {
     'RAV4 (2020 - 2024)'
   ],
   kia: [
-    'سبورتاج (Sportage 2023+)'
+    'سبورتاج (Sportage 2023+)',
+    'سيلتوس (Seltos 2020 - 2026)'
   ],
   audi: [
     'A3 (Audi A3 2021+)'
   ],
   skoda: [
-    'أوكتافيا (Octavia 2015+)'
+    'أوكتافيا (Octavia 2009 - 2013)',
+    'أوكتافيا (Octavia 2014 - 2022)',
+    'أوكتافيا (Octavia 2022 - 2026)'
   ],
   seat: [
+    'ليون (Leon 2006 - 2013)',
+    'ليون (Leon 2014 - 2017)',
+    'ليون (Leon 2018 - 2026)',
     'أتيبيكا (Ateca 2018+)'
+  ],
+  bmw: [
+    'السلسلة 1 (BMW Série 1)',
+    'السلسلة 2 (BMW Série 2)',
+    'السلسلة 3 / F30 (BMW Série 3 / F30)',
+    'السلسلة 4 (BMW Série 4)',
+    'السلسلة 5 / F10 (BMW Série 5 / F10)',
+    'X1 (BMW X1)',
+    'X2 (BMW X2)',
+    'X3 (BMW X3)'
   ],
   ford: [
     'فيستا (Fiesta 2009 - 2016)'
   ],
   citroen: [
-    'C4 (Citroën C4 2020+)'
+    'C4 (Citroën C4 2020+)',
+    'سي إليزيه (Citroën C-Elysée)'
   ],
   honda: [
     'CR-V (Honda CR-V 2012 - 2016)'
+  ],
+  haval: [
+    'جوليون (Haval Jolion)'
+  ],
+  byd: [
+    'جوليون / أتّو (BYD Jolion)'
   ]
 };
 
@@ -150,6 +186,57 @@ export const PRODUCTS = [
     image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
     secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
     features: ['مقاس دقيق حصري لـ Duster 3 2025/2026', 'تصميم عصري رياضي ثلاثي الطبقات', 'تثبيت محكم للغاية'],
+    colors: [{ id: 'black', name: 'أسود سبور', hex: '#0f172a' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'dacia-sandero-1-7d',
+    name: 'طابيات داسيا سانديرو 1 7D (Dacia Sandero 2006 - 2021)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D مخصصة لسيارة داسيا سانديرو الجيل الأول والثاني',
+    price: 460,
+    originalPrice: 580,
+    rating: 4.8,
+    reviewsCount: 165,
+    badge: 'Dacia Sandero 🚗',
+    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['تطابق دقيق مع Sandero 2006-2021', 'تثبيت محكم لمنع الانزلاق', 'سهلة الغسل بالماء'],
+    colors: [{ id: 'black', name: 'أسود أنثراسيت', hex: '#0f172a' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'dacia-sandero-2-7d',
+    name: 'طابيات داسيا سانديرو 3 7D (Dacia Sandero 2022 - 2026)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة داسيا سانديرو الجيل الجديد',
+    price: 460,
+    originalPrice: 580,
+    rating: 4.9,
+    reviewsCount: 140,
+    badge: 'Sandero 2022+ 🔥',
+    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['تصميم بالليزر لمقاس Sandero 2022-2026', 'أزرار تثبيت أصلية', 'حماية 100%'],
+    colors: [{ id: 'black', name: 'أسود مات', hex: '#0f172a' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'dacia-jogger-7d',
+    name: 'طابيات داسيا جوجر 7D (Dacia Jogger)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D عائلية مخصصة لسيارة داسيا جوجر',
+    price: 470,
+    originalPrice: 600,
+    rating: 5.0,
+    reviewsCount: 110,
+    badge: 'Dacia Jogger 👨‍👩‍👧‍👦',
+    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['مفصلة خصيصاً لسيارة Dacia Jogger العائلية', 'مقاومة عالية للأوساخ والماء', 'سهلة التنظيف'],
     colors: [{ id: 'black', name: 'أسود سبور', hex: '#0f172a' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
     inStock: true,
     fastDelivery: true
@@ -365,6 +452,23 @@ export const PRODUCTS = [
     fastDelivery: true
   },
   {
+    id: 'vw-golf-5-7d',
+    name: 'طابيات فولكسفاغن جولف 5 7D (VW Golf 5)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة فولكسفاغن جولف 5',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 160,
+    badge: 'VW Golf 5 🚘',
+    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['مفصلة بالليزر لـ Golf 5', 'تثبيت بالدبابيس الأصلية', 'خامة 7D متينة'],
+    colors: [{ id: 'black', name: 'أسود أنثراسيت', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
     id: 'vw-golf-7-7d',
     name: 'طابيات فولكسفاغن جولف 7 7D (VW Golf 7)',
     category: 'habitacle',
@@ -378,6 +482,91 @@ export const PRODUCTS = [
     secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
     features: ['مفصلة بالليزر لجولف 7', 'أزرار التثبيت الأصلية للـ VW', 'عزل ممتاز للأصوات'],
     colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء GTE/GTI', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'vw-jetta-7d',
+    name: 'طابيات فولكسفاغن جيتا 7D (VW Jetta)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D مخصصة لسيارة فولكسفاغن جيتا',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.8,
+    reviewsCount: 130,
+    badge: 'VW Jetta 🚘',
+    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['قصة دقيقة لمقاس Jetta', 'أزرار التثبيت الأصلية', 'سهلة الغسل بالماء'],
+    colors: [{ id: 'black', name: 'أسود مات', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'vw-troc-7d',
+    name: 'طابيات فولكسفاغن تي-روك 7D (VW T-Roc)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D سبور لسيارة فولكسفاغن T-Roc',
+    price: 470,
+    originalPrice: 600,
+    rating: 5.0,
+    reviewsCount: 145,
+    badge: 'VW T-Roc ⚡',
+    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['مفصلة بالليزر لموديل T-Roc', 'تثبيت محكم وخامة فاخرة', 'حماية 100%'],
+    colors: [{ id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }, { id: 'black', name: 'أسود كربون', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'vw-passat-cc-7d',
+    name: 'طابيات فولكسفاغن باسات CC 7D (VW Passat CC)',
+    category: 'habitacle',
+    subtitle: 'طابيات VIP 7D لسيارات فولكسفاغن باسات CC',
+    price: 480,
+    originalPrice: 620,
+    rating: 4.9,
+    reviewsCount: 140,
+    badge: 'VW Passat CC VIP ⭐',
+    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['قصة VIP مخصصة لـ Passat CC', 'جلد فاخر مقوى', 'مقاوم للماء والأوساخ'],
+    colors: [{ id: 'black', name: 'أسود VIP', hex: '#18181b' }, { id: 'brown', name: 'بني ملكي', hex: '#78350f' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'vw-passat-b7-7d',
+    name: 'طابيات فولكسفاغن باسات B7 7D (VW Passat B7)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة فولكسفاغن باسات B7',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.8,
+    reviewsCount: 120,
+    badge: 'VW Passat B7 🚘',
+    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['مفصلة بالليزر لـ Passat B7', 'أزرار تثبيت VW الأصلية', 'سهلة التنظيف'],
+    colors: [{ id: 'black', name: 'أسود أنثراسيت', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'vw-passat-b8-7d',
+    name: 'طابيات فولكسفاغن باسات B8 7D (VW Passat B8)',
+    category: 'habitacle',
+    subtitle: 'طابيات VIP 7D لسيارات فولكسفاغن باسات B8',
+    price: 480,
+    originalPrice: 620,
+    rating: 5.0,
+    reviewsCount: 165,
+    badge: 'VW Passat B8 VIP ⭐',
+    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['تطابق دقيق 100% لـ Passat B8', 'جلد فاخر بخياطة رياضية', 'عزل للضوضاء'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
     inStock: true,
     fastDelivery: true
   },
@@ -435,10 +624,10 @@ export const PRODUCTS = [
     fastDelivery: true
   },
   {
-    id: 'hyundai-tucson-accent-2023-7d',
-    name: 'طابيات هيونداي توسان / أكسنت 7D (Hyundai Tucson / Accent 2023+)',
+    id: 'hyundai-tucson-2023-7d',
+    name: 'طابيات هيونداي توسان 7D (Hyundai Tucson 2023+)',
     category: 'habitacle',
-    subtitle: 'طابيات 7D ليزر فاخرة لسيارات هيونداي توسان وأكسنت 2023+',
+    subtitle: 'طابيات 7D ليزر فاخرة لسيارات هيونداي توسان 2023+',
     price: 470,
     originalPrice: 600,
     rating: 5.0,
@@ -448,6 +637,23 @@ export const PRODUCTS = [
     secondaryImages: ['/images/tapis_7d_list.png', '/images/tapis_3d_real.jpg'],
     features: ['تصميم ليزر دقيق جداً لـ Tucson 2023+', 'طبقة مضادة للانزلاق ومقاومة للمياه', 'مواد صديقة للبيئة بدون رائحة'],
     colors: [{ id: 'black', name: 'أسود كربون 7D', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء سبور', hex: '#991b1b' }, { id: 'beige', name: 'بيج فاخر', hex: '#d97706' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'hyundai-creta-2020-2026-7d',
+    name: 'طابيات هيونداي كريتا 7D (Hyundai Creta 2020 - 2026)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة هيونداي كريتا SUV',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 115,
+    badge: 'Hyundai Creta 🚘',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_list.png', '/images/tapis_3d_real.jpg'],
+    features: ['مطابقة 100% لموديل Creta 2020-2026', 'حماية من المياه والأتربة', 'تثبيت ممتاز'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
     inStock: true,
     fastDelivery: true
   },
@@ -575,24 +781,43 @@ export const PRODUCTS = [
     fastDelivery: true
   },
 
-  // --- SKODA, AUDI, SEAT, KIA, FORD, CITROEN, HONDA ---
+  // --- KIA ---
   {
-    id: 'skoda-octavia-2015-7d',
-    name: 'طابيات شكودا أوكتافيا 7D (Škoda Octavia 2015+)',
+    id: 'kia-sportage-2023-7d',
+    name: 'طابيات كيا سبورتاج 7D (Kia Sportage 2023+)',
     category: 'habitacle',
-    subtitle: 'طابيات 7D فاخرة لسيارة شكودا أوكتافيا',
+    subtitle: 'طابيات 7D فاخرة لسيارة كيا سبورتاج الجيل الجديد',
     price: 470,
     originalPrice: 600,
-    rating: 4.9,
-    reviewsCount: 150,
-    badge: 'Škoda Octavia 🚗',
-    image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
-    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
-    features: ['مفصلة بالليزر لموديل Octavia 2015+', 'تثبيت ممتاز مع أزرار الفولكسفاغن/شكودا', 'مظهر أنيق'],
-    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }],
+    rating: 5.0,
+    reviewsCount: 185,
+    badge: 'Kia Sportage 2023+ 🔥',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_list.png', '/images/tapis_3d_real.jpg'],
+    features: ['مفصلة بالليزر لموديل Sportage 2023+', 'أزرار التثبيت الأصلية', 'مقاوم للماء والأوساخ'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء GT-Line', hex: '#991b1b' }],
     inStock: true,
     fastDelivery: true
   },
+  {
+    id: 'kia-seltos-2020-2026-7d',
+    name: 'طابيات كيا سيلتوس 7D (Kia Seltos 2020 - 2026)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة كيا سيلتوس',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 120,
+    badge: 'Kia Seltos 🚘',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_list.png', '/images/tapis_3d_real.jpg'],
+    features: ['مفصلة بالليزر لـ Kia Seltos', 'حماية موكيت عالي الجودة', 'تثبيت ممتاز'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- AUDI ---
   {
     id: 'audi-a3-2021-7d',
     name: 'طابيات أودي A3 7D (Audi A3 2021+)',
@@ -607,6 +832,112 @@ export const PRODUCTS = [
     secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
     features: ['تصميم VIP خصيصاً لـ Audi A3 2021+', 'جلد فاخر مقوى بخياطة دقيقة', 'حماية عزل عالية'],
     colors: [{ id: 'black', name: 'أسود أنثراسيت', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء S-Line', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- SKODA ---
+  {
+    id: 'skoda-octavia-2009-2013-7d',
+    name: 'طابيات شكودا أوكتافيا 7D (Škoda Octavia 2009 - 2013)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارة شكودا أوكتافيا الجيل الثاني',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.8,
+    reviewsCount: 140,
+    badge: 'Škoda Octavia 🚗',
+    image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['تطابق 100% مع أرضية Octavia 2009-2013', 'أزرار تثبيت أصلية', 'مقاوم للماء'],
+    colors: [{ id: 'black', name: 'أسود مات', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'skoda-octavia-2014-2022-7d',
+    name: 'طابيات شكودا أوكتافيا 7D (Škoda Octavia 2014 - 2022)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارة شكودا أوكتافيا الجيل الثالث',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 170,
+    badge: 'Škoda Octavia 🚗',
+    image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['مفصلة بالليزر لـ Octavia 2014-2022', 'تثبيت محكم مع أزرار الفولكسفاغن/شكودا', 'مظهر أنيق'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'skoda-octavia-2022-2026-7d',
+    name: 'طابيات شكودا أوكتافيا 7D (Škoda Octavia 2022 - 2026)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D ليزر فاخرة لسيارة شكودا أوكتافيا الحديثة',
+    price: 470,
+    originalPrice: 600,
+    rating: 5.0,
+    reviewsCount: 125,
+    badge: 'Octavia 2022+ 🔥',
+    image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['قصة حصرياً لموديلات Octavia 2022-2026', 'أزرار التثبيت الأصلية', 'حماية 100%'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء RS', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- SEAT ---
+  {
+    id: 'seat-leon-2006-2013-7d',
+    name: 'طابيات سيات ليون 7D (SEAT Leon 2006 - 2013)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D مخصصة لسيارة سيات ليون الجيل الثاني',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.8,
+    reviewsCount: 130,
+    badge: 'SEAT Leon 🏎️',
+    image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['تطابق دقيق مع Leon 2006-2013', 'تثبيت محكم لمنع الانزلاق', 'سهلة الغسل بالماء'],
+    colors: [{ id: 'black', name: 'أسود أنثراسيت', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'seat-leon-2014-2017-7d',
+    name: 'طابيات سيات ليون 7D (SEAT Leon 2014 - 2017)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارة سيات ليون الجيل الثالث',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 160,
+    badge: 'SEAT Leon 🏎️',
+    image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['مفصلة بالليزر لموديل Leon 2014-2017', 'أزرار التثبيت الأصلية', 'تصميم سبور'],
+    colors: [{ id: 'black-red', name: 'أسود بخياطة حمراء FR', hex: '#991b1b' }, { id: 'black', name: 'أسود كربون', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'seat-leon-2018-2026-7d',
+    name: 'طابيات سيات ليون 7D (SEAT Leon 2018 - 2026)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D سبور لسيارة سيات ليون الجيل الجديد',
+    price: 470,
+    originalPrice: 600,
+    rating: 5.0,
+    reviewsCount: 180,
+    badge: 'SEAT Leon FR ⚡',
+    image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_3d_real.jpg'],
+    features: ['مفصلة بالليزر لـ Leon 2018-2026', 'أزرار تثبيت أصلية', 'حماية كاملة 7D'],
+    colors: [{ id: 'black-red', name: 'أسود بخياطة حمراء FR', hex: '#991b1b' }, { id: 'black', name: 'أسود كربون', hex: '#18181b' }],
     inStock: true,
     fastDelivery: true
   },
@@ -627,23 +958,146 @@ export const PRODUCTS = [
     inStock: true,
     fastDelivery: true
   },
+
+  // --- BMW ---
   {
-    id: 'kia-sportage-2023-7d',
-    name: 'طابيات كيا سبورتاج 7D (Kia Sportage 2023+)',
+    id: 'bmw-serie-1-7d',
+    name: 'طابيات بي إم دبليو السلسلة 1 7D (BMW Série 1)',
     category: 'habitacle',
-    subtitle: 'طابيات 7D فاخرة لسيارة كيا سبورتاج الجيل الجديد',
-    price: 470,
-    originalPrice: 600,
-    rating: 5.0,
-    reviewsCount: 185,
-    badge: 'Kia Sportage 2023+ 🔥',
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
-    secondaryImages: ['/images/tapis_7d_list.png', '/images/tapis_3d_real.jpg'],
-    features: ['مفصلة بالليزر لموديل Sportage 2023+', 'أزرار التثبيت الأصلية', 'مقاوم للماء والأوساخ'],
-    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء GT-Line', hex: '#991b1b' }],
+    subtitle: 'طابيات VIP 7D مخصصة لسيارة بي إم دبليو السلسلة 1',
+    price: 480,
+    originalPrice: 620,
+    rating: 4.9,
+    reviewsCount: 140,
+    badge: 'BMW Série 1 ⚡',
+    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_7d_list.png'],
+    features: ['مفصلة بالليزر لـ BMW Série 1', 'جلد فاخر ثلاثي الطبقات M-Sport', 'تثبيت محكم أوريجينال'],
+    colors: [{ id: 'black', name: 'أسود VIP', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء M', hex: '#991b1b' }],
     inStock: true,
     fastDelivery: true
   },
+  {
+    id: 'bmw-serie-2-7d',
+    name: 'طابيات بي إم دبليو السلسلة 2 7D (BMW Série 2)',
+    category: 'habitacle',
+    subtitle: 'طابيات VIP 7D على المقاس لسيارات بي إم دبليو السلسلة 2',
+    price: 480,
+    originalPrice: 620,
+    rating: 4.9,
+    reviewsCount: 110,
+    badge: 'BMW Série 2 ⚡',
+    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_7d_list.png'],
+    features: ['مفصلة بالليزر لـ BMW Série 2', 'أزرار التثبيت الأصلية', 'عزل كلي للماء والموكيت'],
+    colors: [{ id: 'black', name: 'أسود VIP', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'bmw-serie-3-f30-7d',
+    name: 'طابيات بي إم دبليو السلسلة 3 / F30 7D (BMW Série 3 / F30)',
+    category: 'habitacle',
+    subtitle: 'طابيات VIP 7D فائقة الفخامة لسيارات BMW Série 3 (F30 / G20)',
+    price: 480,
+    originalPrice: 620,
+    rating: 5.0,
+    reviewsCount: 220,
+    badge: 'BMW F30 / Série 3 🏆',
+    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_7d_list.png'],
+    features: ['قصة دقيقة 100% لموديلات BMW F30 / Série 3', 'خياطة M-Performance فاخرة', 'تثبيت بأزرار الفيلكرو الأصلية'],
+    colors: [{ id: 'black-red', name: 'أسود بخياطة حمراء M', hex: '#991b1b' }, { id: 'black', name: 'أسود كربون VIP', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'bmw-serie-4-7d',
+    name: 'طابيات بي إم دبليو السلسلة 4 7D (BMW Série 4)',
+    category: 'habitacle',
+    subtitle: 'طابيات VIP 7D سبور لسيارة بي إم دبليو السلسلة 4',
+    price: 480,
+    originalPrice: 620,
+    rating: 5.0,
+    reviewsCount: 115,
+    badge: 'BMW Série 4 VIP ⭐',
+    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_7d_list.png'],
+    features: ['مفصلة بالليزر لـ BMW Série 4', 'جلد فاخر مقوى', 'مقاوم للماء والزيوت'],
+    colors: [{ id: 'black', name: 'أسود VIP', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء M', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'bmw-serie-5-f10-7d',
+    name: 'طابيات بي إم دبليو السلسلة 5 / F10 7D (BMW Série 5 / F10)',
+    category: 'habitacle',
+    subtitle: 'طابيات VIP 7D فاخرة لسيارات BMW Série 5 (F10 / G30)',
+    price: 480,
+    originalPrice: 620,
+    rating: 5.0,
+    reviewsCount: 195,
+    badge: 'BMW F10 / Série 5 ⭐',
+    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_7d_list.png'],
+    features: ['قصة VIP ملكية لموديلات BMW F10 / Série 5', 'عزل تام للضوضاء والرطوبة', 'لمسة جلد ممتازة'],
+    colors: [{ id: 'black', name: 'أسود ملكي VIP', hex: '#18181b' }, { id: 'brown', name: 'بني جلد فاخر', hex: '#78350f' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'bmw-x1-7d',
+    name: 'طابيات بي إم دبليو X1 7D (BMW X1)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة بي إم دبليو X1 SUV',
+    price: 480,
+    originalPrice: 620,
+    rating: 4.9,
+    reviewsCount: 150,
+    badge: 'BMW X1 SUV ⚡',
+    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_7d_list.png'],
+    features: ['مفصلة بالليزر لـ BMW X1', 'تثبيت محكم مع أزرار الفيلكرو', 'مقاوم للماء 100%'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'bmw-x2-7d',
+    name: 'طابيات بي إم دبليو X2 7D (BMW X2)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارة بي إم دبليو X2',
+    price: 480,
+    originalPrice: 620,
+    rating: 4.9,
+    reviewsCount: 105,
+    badge: 'BMW X2 ⚡',
+    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_7d_list.png'],
+    features: ['مفصلة بالليزر لموديل BMW X2', 'تصميم سبور VIP', 'سهل الغسل'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'bmw-x3-7d',
+    name: 'طابيات بي إم دبليو X3 7D (BMW X3)',
+    category: 'habitacle',
+    subtitle: 'طابيات VIP 7D لسيارة بي إم دبليو X3 SUV',
+    price: 480,
+    originalPrice: 620,
+    rating: 5.0,
+    reviewsCount: 160,
+    badge: 'BMW X3 SUV VIP ⭐',
+    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_7d_list.png'],
+    features: ['قصة مخصصة لـ BMW X3 SUV', 'حماية شاملة للمقاعد والأرضية', 'مقاوم للزيوت والأتربة'],
+    colors: [{ id: 'black', name: 'أسود VIP', hex: '#18181b' }, { id: 'brown', name: 'بني جلد فاخر', hex: '#78350f' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- FORD ---
   {
     id: 'ford-fiesta-2009-2016-7d',
     name: 'طابيات فورد فيستا 7D (Ford Fiesta 2009 - 2016)',
@@ -661,6 +1115,8 @@ export const PRODUCTS = [
     inStock: true,
     fastDelivery: true
   },
+
+  // --- CITROEN ---
   {
     id: 'citroen-c4-2020-7d',
     name: 'طابيات سيتروين C4 7D (Citroën C4 2020+)',
@@ -679,6 +1135,25 @@ export const PRODUCTS = [
     fastDelivery: true
   },
   {
+    id: 'citroen-c-elysee-7d',
+    name: 'طابيات سيتروين سي إليزيه 7D (Citroën C-Elysée)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D مخصصة لسيارة سيتروين سي إليزيه',
+    price: 460,
+    originalPrice: 580,
+    rating: 4.8,
+    reviewsCount: 125,
+    badge: 'Citroën C-Elysée 🚗',
+    image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_3d_real.jpg', '/images/tapis_7d_list.png'],
+    features: ['مطابقة 100% مع أرضية C-Elysée', 'أزرار تثبيت أصلية', 'سهلة التنظيف بالماء'],
+    colors: [{ id: 'black', name: 'أسود أنثراسيت', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- HONDA ---
+  {
     id: 'honda-crv-2012-2016-7d',
     name: 'طابيات هوندا CR-V 7D (Honda CR-V 2012 - 2016)',
     category: 'habitacle',
@@ -692,6 +1167,42 @@ export const PRODUCTS = [
     secondaryImages: ['/images/tapis_7d_list.png', '/images/tapis_3d_real.jpg'],
     features: ['مفصلة لسيارة Honda CR-V 2012-2016', 'تثبيت ممتاز بحواف مرتفعة', 'مقاوم للشحوم والماء'],
     colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- HAVAL & BYD ---
+  {
+    id: 'haval-jolion-7d',
+    name: 'طابيات هافال جوليون 7D (Haval Jolion)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارة هافال جوليون SUV',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 85,
+    badge: 'Haval Jolion 🚘',
+    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_list.png', '/images/tapis_3d_real.jpg'],
+    features: ['قصة دقيقة لمقاس Haval Jolion', 'خامة 7D فاخرة بدون رائحة', 'مقاوم للماء والأتربة'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'byd-jolion-7d',
+    name: 'طابيات بي واي دي جوليون / أتّو 7D (BYD Jolion / Atto)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارات بي واي دي الكهربائية والهدينة',
+    price: 470,
+    originalPrice: 600,
+    rating: 5.0,
+    reviewsCount: 75,
+    badge: 'BYD Jolion ⚡',
+    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_list.png', '/images/tapis_3d_real.jpg'],
+    features: ['مفصلة بالليزر لموديلات BYD الحديثة', 'عزل رائع للموكيت', 'تثبيت محكم للغاية'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
     inStock: true,
     fastDelivery: true
   },
@@ -773,7 +1284,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'كيف أتأكد من أن الطابيات متوافقة 100% مع سيارتي؟',
-    answer: 'طابياتنا 7D (هيونداي أكسنت/توسان، رينو/داسيا دوستر، فولكسفاغن كادي/جولف، إلخ) مصممة بتقنية الليزر لكل ماركة وموديل. عند طلبك، تختار نوع سيارتك وسنتأكد من إرسال الموديل المطابق تماماً.'
+    answer: 'طابياتنا 7D مصممة بتقنية الليزر لكل ماركة وموديل (داسيا، فولكسفاغن، بيجو، رينو، هيونداي، بي إم دبليو، مرسيدس، إلخ). عند طلبك، تختار نوع سيارتك وسنتأكد من إرسال الموديل المطابق تماماً.'
   },
   {
     question: 'ما هي مدة التوصيل بالمغرب؟',
