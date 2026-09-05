@@ -13,6 +13,7 @@ export default function ProductModal({ product, onClose, onAddToCart, selectedVe
   const [clientName, setClientName] = useState('');
   const [clientPhone, setClientPhone] = useState('');
   const [clientCity, setClientCity] = useState('الدار البيضاء (كازابلانكا)');
+  const [clientAddress, setClientAddress] = useState('');
   const [carBrand, setCarBrand] = useState(selectedVehicle?.brand || '');
   const [carModel, setCarModel] = useState(selectedVehicle?.model || '');
   const [carYear, setCarYear] = useState(selectedVehicle?.year || '2023');
@@ -28,16 +29,19 @@ export default function ProductModal({ product, onClose, onAddToCart, selectedVe
   const handleSendWhatsApp = (e) => {
     e.preventDefault();
 
-    let msg = `*طلب جديد - كازابلانكا أوتو أكسسوار*\n\n`;
-    msg += `📦 *المنتج:* ${product.name}\n`;
+    let msg = `*طلب جديد - كازابلانكا أوتو أكسسوار* 🚗\n\n`;
+    msg += `👤 *معلومات الزبون:*\n`;
+    msg += `• *الاسم الكامل:* ${clientName || 'غير محدد'}\n`;
+    msg += `• *رقم الهاتف:* ${clientPhone || 'غير محدد'}\n`;
+    msg += `• *المدينة:* ${clientCity}\n`;
+    msg += `• *العنوان الكامل:* ${clientAddress || 'غير محدد'}\n\n`;
+    msg += `🚗 *معلومات السيارة:*\n`;
+    msg += `• *الماركة والموديل:* ${carBrand} ${carModel}\n`;
+    msg += `• *سنة التصنيع:* ${carYear || 'غير محدد'}\n\n`;
+    msg += `📦 *تفاصيل المنتج:* ${product.name}\n`;
     msg += `💰 *الثمن:* ${product.price} درهم\n`;
     msg += `🎨 *اللون / الفينيسيون:* ${selectedColor}\n\n`;
-    msg += `👤 *معلومات الزبون:*\n`;
-    msg += `- الاسم الكامل: ${clientName || 'غير محدد'}\n`;
-    msg += `- رقم الهاتف: ${clientPhone || 'غير محدد'}\n`;
-    msg += `- مدينة التسليم: ${clientCity}\n`;
-    msg += `- السيارة: ${carBrand} ${carModel} (${carYear})\n\n`;
-    msg += `🚚 *الدفع:* عند الاستلام 100%`;
+    msg += `🚚 *طريقة الدفع:* الدفع عند الاستلام 100% بعد المعاينة`;
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
   };
@@ -271,6 +275,19 @@ export default function ProductModal({ product, onClose, onAddToCart, selectedVe
                       className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl p-2.5 focus:border-red-600 focus:bg-white focus:outline-none"
                     />
                   </div>
+                </div>
+
+                {/* Adresse complète */}
+                <div>
+                  <label className="block font-bold text-slate-700 mb-0.5">العنوان الكامل للتسليم *</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="الحي، الشارع، رقم المنزل أو نقطة معروفة..."
+                    value={clientAddress}
+                    onChange={(e) => setClientAddress(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-200 text-slate-900 rounded-xl p-2.5 focus:border-red-600 focus:bg-white focus:outline-none"
+                  />
                 </div>
 
               </div>

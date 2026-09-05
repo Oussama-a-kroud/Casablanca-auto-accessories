@@ -33,17 +33,20 @@ export default function CheckoutModal({ isOpen, onClose, cart, singleProduct, on
   };
 
   const openWhatsAppConfirmation = () => {
-    let msg = `*طلب جديد - كازابلانكا أوتو أكسسوار*\n`;
-    msg += `الزبون: ${formData.fullName}\n`;
-    msg += `الهاتف: ${formData.phone}\n`;
-    msg += `المدينة: ${formData.city}\n`;
-    msg += `العنوان: ${formData.address}\n`;
-    msg += `السيارة: ${formData.carModel}\n\n`;
-    msg += `*المنتجات:*\n`;
+    let msg = `*طلب جديد - كازابلانكا أوتو أكسسوار* 🚗\n\n`;
+    msg += `👤 *معلومات الزبون:*\n`;
+    msg += `• *الاسم الكامل:* ${formData.fullName || 'غير محدد'}\n`;
+    msg += `• *رقم الهاتف:* ${formData.phone || 'غير محدد'}\n`;
+    msg += `• *المدينة:* ${formData.city}\n`;
+    msg += `• *العنوان الكامل:* ${formData.address || 'غير محدد'}\n\n`;
+    msg += `🚗 *معلومات السيارة:*\n`;
+    msg += `• *الماركة والموديل:* ${formData.carModel || 'غير محدد'}\n\n`;
+    msg += `📦 *المنتجات المطلوبة:*\n`;
     itemsToBuy.forEach((item) => {
-      msg += `- ${item.name} (${item.price} درهم)\n`;
+      msg += `• ${item.name} (${item.price} درهم)\n`;
     });
-    msg += `\n*المجموع الإجمالي: ${totalPrice} درهم (الدفع عند الاستلام)*`;
+    msg += `\n💰 *المجموع الإجمالي:* ${totalPrice} درهم\n`;
+    msg += `🚚 *طريقة الدفع:* الدفع عند الاستلام 100% بعد المعاينة`;
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
   };
