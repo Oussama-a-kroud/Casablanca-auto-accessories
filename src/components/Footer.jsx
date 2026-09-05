@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, MessageCircle, ShieldCheck } from 'lucide-react';
+import { Phone, MapPin, MessageCircle, ShieldCheck, Code2 } from 'lucide-react';
 import { WHATSAPP_NUMBER, DISPLAY_PHONE } from '../data/products';
 import { getAssetUrl } from '../utils/image';
 
@@ -88,9 +88,17 @@ export default function Footer({ onSelectCategory }) {
 
         </div>
 
-        <div className="mt-8 pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
+        {/* Footer Bottom Bar with Pro Developer Credit */}
+        <div className="mt-8 pt-5 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
           <p>© {new Date().getFullYear()} Casablanca Auto Accessories - جميع الحقوق محفوظة.</p>
-          <p>طابيات سيارات 7D و 3D مصممة على المقاس.</p>
+          
+          <div className="flex items-center gap-2 bg-slate-800/90 hover:bg-slate-800 px-3.5 py-1.5 rounded-full border border-slate-700/80 transition-all shadow-xs">
+            <Code2 className="w-3.5 h-3.5 text-red-400" />
+            <span>Developed by</span>
+            <span className="font-extrabold text-white tracking-wide font-['Plus_Jakarta_Sans',sans-serif]" dir="ltr">
+              Oussama Akroud
+            </span>
+          </div>
         </div>
 
       </div>
