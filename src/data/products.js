@@ -171,10 +171,151 @@ export const PRODUCTS = [
     fastDelivery: true
   },
   {
+    id: 'peugeot-rifter-301-308-3008-7d',
+    name: 'طابيات بيجو 7D على المقاس (Peugeot 208 / 301 / 308 / 3008 / Rifter / Partner)',
+    category: 'habitacle',
+    subtitle: 'طابيات ليزر 7D عالية الكثافة لسيارات بيجو 208، 301، 308، 3008، بارتنر تيبي وريفتر',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 164,
+    badge: 'طابيات 7D بيجو 🦁',
+    image: '/images/tapis_3d_real.jpg',
+    secondaryImages: [
+      '/images/tapis_7d_list.png',
+      '/images/tucson_470dh.png'
+    ],
+    features: [
+      'مفصلة بالليزر لمقاسات بيجو 208, 301, 308, 3008, Partner Tepee & Rifter',
+      'أزرار تثبيت مطابقة 100% لمقاعد السيارة الأصلية',
+      'حواف مرتفعة وحماية كاملة من الأتربة والمياه',
+      'سهلة الغسل بالماء وتجف في ثوانٍ'
+    ],
+    colors: [
+      { id: 'black-red', name: 'أسود بخياطة حمراء سبور', hex: '#991b1b' },
+      { id: 'black', name: 'أسود كربون فاخر', hex: '#18181b' }
+    ],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'mercedes-w203-w204-w205-w206-7d',
+    name: 'طابيات مرسيدس كلاس C 7D فاخرة (Mercedes W203 / W204 / W205 / W206)',
+    category: 'habitacle',
+    subtitle: 'طابيات VIP 7D مصممة بتقنية الليزر لموديلات مرسيدس C-Class',
+    price: 480,
+    originalPrice: 620,
+    rating: 5.0,
+    reviewsCount: 148,
+    badge: 'طابيات VIP مرسيدس ⭐',
+    image: '/images/tucson_470dh.png',
+    secondaryImages: [
+      '/images/tapis_3d_real.jpg',
+      '/images/tapis_7d_list.png'
+    ],
+    features: [
+      'تصميم VIP ليزر 7D متوافق مع مرسيدس C-Class W203, W204, W205 & W206',
+      'خامات جلدية فاخرة مقاومة للخدش والتآكل',
+      'عزل ممتازة للأصوات والحرارة لراحة الركاب',
+      'مقاوم للماء 100% مع مظهر رياضي أنيق'
+    ],
+    colors: [
+      { id: 'black', name: 'أسود أنثراسيت VIP', hex: '#18181b' },
+      { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' },
+      { id: 'brown', name: 'بني جلد ملكي', hex: '#78350f' }
+    ],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'toyota-nissan-qashqai-rav4-corolla-7d',
+    name: 'طابيات تويوتا ونيسان 7D (Toyota RAV4 / Corolla Cross & Nissan Qashqai)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فائقة الجودة لسيارات تويوتا RAV4 وكورولا نيسان قشقاي 2006-2014',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.8,
+    reviewsCount: 135,
+    badge: 'طابيات 7D تويوتا ونيسان 🚙',
+    image: '/images/renault_460dh.png',
+    secondaryImages: [
+      '/images/tapis_3d_real.jpg',
+      '/images/tapis_7d_list.png'
+    ],
+    features: [
+      'مطابقة 100% لمقاسات نيسان قشقاي وتويوتا RAV4 وكورولا كروس',
+      'طبقة متينة مضادة للانزلاق ومقاومة للماء والأتربة',
+      'سهولة في التركيب والتنظيف اليومي',
+      'مادة بدون رائحة وصديقة للبيئة'
+    ],
+    colors: [
+      { id: 'black', name: 'أسود مات أوريجينال', hex: '#0f172a' },
+      { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }
+    ],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'kia-audi-skoda-seat-ford-7d',
+    name: 'طابيات 7D على المقاس (Škoda Octavia / Audi A3 / SEAT Ateca / Ford Fiesta / Kia Sportage)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارات شكودا أوكتافيا، أودي A3، سيات أتيبيكا، فورد فيستا وكيا سبورتاج',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 172,
+    badge: 'طابيات 7D على المقاس ⚡',
+    image: '/images/caddy_470dh.png',
+    secondaryImages: [
+      '/images/tapis_3d_real.jpg',
+      '/images/tapis_7d_list.png'
+    ],
+    features: [
+      'مفصلة بالليزر لسيارات شكودا أوكتافيا، أودي A3، سيات أتيبيكا، فورد فيستا وكيا سبورتاج 2023+',
+      'أزرار تثبيت جاهزة للتركيب المباشر',
+      'حماية شاملة للموكيت والدواسات',
+      'جودة متينة تدوم لسنوات طوال'
+    ],
+    colors: [
+      { id: 'black', name: 'أسود أنثراسيت 7D', hex: '#18181b' },
+      { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }
+    ],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'citroen-honda-c4-crv-7d',
+    name: 'طابيات سيتروين وهوندا 7D على المقاس (Citroën C4 & Honda CR-V)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة ومقاومة للماء لسيارات سيتروين C4 وهوندا CR-V',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.8,
+    reviewsCount: 110,
+    badge: 'طابيات 7D فاخرة 🚘',
+    image: '/images/tapis_3d_real.jpg',
+    secondaryImages: [
+      '/images/tapis_7d_list.png',
+      '/images/tucson_470dh.png'
+    ],
+    features: [
+      'مقاس دقيق 100% لسيارات سيتروين C4 2020+ وهوندا CR-V 2012-2016',
+      'حواف مرتفعة تمنع الأوساخ والسوائل من تسرب للموكيت الاصلي',
+      'سهلة الغسل بالماء وتنشف بسرعة',
+      'تصميم مريح للقدمين مع مظهر سبور أنيق'
+    ],
+    colors: [
+      { id: 'black', name: 'أسود مات 7D', hex: '#18181b' },
+      { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }
+    ],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
     id: 'bac-de-coffre-3d-sur-mesure',
     name: 'فرش الصندوق الخلفي 7D المقاوم للماء (Bac de Coffre)',
     category: 'coffre',
-    subtitle: 'حماية كاملة لصندوق السيارة من السوائل، الأمتعة والأوساخ',
+    subtitle: 'حماية كاملة لصندوق السيارة من السوائل، الأمتعة والأوساخ لجميع السيارات',
     price: 350,
     originalPrice: 450,
     rating: 4.8,
@@ -185,7 +326,7 @@ export const PRODUCTS = [
       '/images/tapis_3d_real.jpg'
     ],
     features: [
-      'مفصل خصيصاً 7D حسب المقاس الدقيق لصندوق سيارتك',
+      'مفصل خصيصاً 7D حسب المقاس الدقيق لصندوق سيارتك (دوستر، كليو، توسان، كادي، بيجو، إلخ)',
       'سطح مضاد للانزلاق يمنع تحرك الأمتعة أثناء السياقة',
       'مقاوم للماء، الزيوت، الأتربة والغبار',
       'حواف مرتفعة تمنع تسرب السوائل للموكيت الاصلي'
@@ -200,7 +341,7 @@ export const PRODUCTS = [
     id: 'pack-integral-7d-luxe',
     name: 'باك كامل 7D فاخر (طابيات السيارة + فرش الصندوق)',
     category: 'pack',
-    subtitle: 'الحماية الشاملة 360 درجة لداخلية سيارتك بالكامل',
+    subtitle: 'الحماية الشاملة 360 درجة لداخلية سيارتك بالكامل لجميع السيارات',
     price: 750,
     originalPrice: 990,
     rating: 5.0,
