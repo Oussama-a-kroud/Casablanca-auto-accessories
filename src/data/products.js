@@ -1,4 +1,5 @@
 export const BRANDS = [
+  { id: 'opel', name: 'أوبل (Opel)', logo: '⚡' },
   { id: 'dacia', name: 'داسيا (Dacia)', logo: '🚗' },
   { id: 'renault', name: 'رينو (Renault)', logo: '🚙' },
   { id: 'peugeot', name: 'بيجو (Peugeot)', logo: '🏎️' },
@@ -70,9 +71,17 @@ export const CAR_MODELS = {
   nissan: [
     'قشقاي (Qashqai 2006 - 2014)'
   ],
-  toyota: [
-    'كورولا كروس (Corolla Cross 2021 - 2022)',
+    toyota: [
+    'كورولا (Corolla 2008 - 2013)',
+    'كورولا (Corolla 2014 - 2018)',
+    'كورولا كروس (Corolla Cross 2018 - 2026)',
+    'ياريس كروس (Yaris Cross)',
     'RAV4 (2020 - 2024)'
+  ],
+  opel: [
+    'كورسا (Opel Corsa)',
+    'موكا (Opel Mokka)',
+    'جراندلاند (Opel Grandland)'
   ],
   kia: [
     'سبورتاج (Sportage 2023+)',
@@ -1202,6 +1211,130 @@ export const PRODUCTS = [
     image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
     secondaryImages: ['/images/tapis_7d_clean.jpg'],
     features: ['مفصلة بالليزر لموديلات BYD الحديثة', 'عزل رائع للموكيت', 'تثبيت محكم للغاية'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  
+  // --- TOYOTA (COROLLA & YARIS CROSS) ---
+  {
+    id: 'toyota-corolla-2008-2013-7d',
+    name: 'طابيات تويوتا كورولا 7D (Toyota Corolla 2008 - 2013)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة تويوتا كورولا 2008-2013',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.8,
+    reviewsCount: 145,
+    badge: 'Toyota Corolla 🚘',
+    image: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لـ Corolla 2008-2013', 'تثبيت محكم وأزرار الأرضية', 'سهلة التنظيف بالماء'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'toyota-corolla-2014-2018-7d',
+    name: 'طابيات تويوتا كورولا 7D (Toyota Corolla 2014 - 2018)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارة تويوتا كورولا 2014-2018',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 160,
+    badge: 'Toyota Corolla 🚘',
+    image: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['تطابق دقيق 100% مع Corolla 2014-2018', 'حماية حواف الأبواب والموكيت الأصلي', 'مقاوم للماء'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'toyota-corolla-cross-2018-2026-7d',
+    name: 'طابيات تويوتا كورولا كروس 7D (Toyota Corolla Cross 2018 - 2026)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارات تويوتا كورولا كروس 2018-2026',
+    price: 470,
+    originalPrice: 600,
+    rating: 5.0,
+    reviewsCount: 175,
+    badge: 'Corolla Cross SUV 🚙',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لـ Corolla Cross 2018-2026', 'أزرار التثبيت الأصلية', 'عزل كامل للموكيت'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'toyota-yaris-cross-7d',
+    name: 'طابيات تويوتا ياريس كروس 7D (Toyota Yaris Cross)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة تويوتا ياريس كروس',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 130,
+    badge: 'Yaris Cross 🚙',
+    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لموديل Yaris Cross', 'تصميم سبور عالي المتانة', 'مقاوم للماء والأتربة'],
+    colors: [{ id: 'black', name: 'أسود مات', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- OPEL ---
+  {
+    id: 'opel-corsa-7d',
+    name: 'طابيات أوبل كورسا 7D (Opel Corsa)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة أوبل كورسا',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 125,
+    badge: 'Opel Corsa ⚡',
+    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لمقاس Opel Corsa', 'أزرار تثبيت أصلية', 'حماية 100%'],
+    colors: [{ id: 'black', name: 'أسود مات', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'opel-mokka-7d',
+    name: 'طابيات أوبل موكا 7D (Opel Mokka)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D سبور لسيارة أوبل موكا Crossover',
+    price: 470,
+    originalPrice: 600,
+    rating: 5.0,
+    reviewsCount: 140,
+    badge: 'Opel Mokka ⚡',
+    image: 'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['قصة بالليزر لـ Opel Mokka', 'لمسة سبور فاخرة', 'سهل الغسل والتجفيف'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء GS', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'opel-grandland-7d',
+    name: 'طابيات أوبل جراندلاند 7D (Opel Grandland)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارة أوبل جراندلاند SUV',
+    price: 470,
+    originalPrice: 600,
+    rating: 5.0,
+    reviewsCount: 110,
+    badge: 'Opel Grandland SUV 🚘',
+    image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لـ Opel Grandland SUV', 'حماية قصوى للأرضية والموكيت', 'تثبيت محكم'],
     colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
     inStock: true,
     fastDelivery: true
