@@ -1,31 +1,87 @@
 export const BRANDS = [
-  { id: 'hyundai', name: 'هيونداي (Hyundai)', logo: '🚘' },
-  { id: 'renault', name: 'رينو (Renault)', logo: '🚙' },
   { id: 'dacia', name: 'داسيا (Dacia)', logo: '🚗' },
-  { id: 'volkswagen', name: 'فولكسفاغن (Volkswagen)', logo: '🚘' },
+  { id: 'renault', name: 'رينو (Renault)', logo: '🚙' },
   { id: 'peugeot', name: 'بيجو (Peugeot)', logo: '🏎️' },
+  { id: 'volkswagen', name: 'فولكسفاغن (Volkswagen)', logo: '🚘' },
+  { id: 'hyundai', name: 'هيونداي (Hyundai)', logo: '🚘' },
   { id: 'mercedes', name: 'مرسيدس (Mercedes-Benz)', logo: '⭐' },
-  { id: 'bmw', name: 'بي إم دبليو (BMW)', logo: '🔵' },
-  { id: 'audi', name: 'أودي (Audi)', logo: '💍' },
+  { id: 'nissan', name: 'نيسان (Nissan)', logo: '🚙' },
   { id: 'toyota', name: 'تويوتا (Toyota)', logo: '🚙' },
   { id: 'kia', name: 'كيا (Kia)', logo: '🚘' },
+  { id: 'audi', name: 'أودي (Audi)', logo: '💍' },
+  { id: 'skoda', name: 'شكودا (Škoda)', logo: '🚗' },
+  { id: 'seat', name: 'سيات (SEAT)', logo: '🏎️' },
+  { id: 'ford', name: 'فورد (Ford)', logo: '🚙' },
   { id: 'citroen', name: 'سيتروين (Citroën)', logo: '🚗' },
-  { id: 'fiat', name: 'فيات (Fiat)', logo: '🚗' }
+  { id: 'honda', name: 'هوندا (Honda)', logo: '🚘' }
 ];
 
 export const CAR_MODELS = {
-  hyundai: ['توسان Tucson (2023+)', 'توسان Tucson 3', 'أكسنت Accent', 'i10', 'i20', 'كريتا Creta', 'سانتافي Santa Fe'],
-  renault: ['كليو Clio 4', 'كليو Clio 5', 'ميغان Megane 4', 'كادجار Kadjar', 'أوسترال Austral', 'كابتور Captur 2', 'إكسبريس Express'],
-  dacia: ['دوستر Duster 1/2', 'دوستر Duster 3 (2024+)', 'لوغان Logan (2012-2020)', 'لوغان Logan 3 (2021+)', 'سانديرو ستيبواي Sandero', 'جوجر Jogger'],
-  volkswagen: ['كادي Caddy', 'جولف Golf 7 / 7.5', 'جولف Golf 8', 'بولو Polo 6', 'تيجوان Tiguan 2', 'طوارق Touareg', 'تي روك T-Roc', 'باسات Passat B8'],
-  peugeot: ['208 II', '308 III', '2008 II', '3008 II', '5008 II', 'بارتنر Partner / Rifter'],
-  mercedes: ['كلاس C (W205/W206)', 'كلاس E (W213)', 'كلاس A (W177)', 'GLC', 'GLE', 'CLA'],
-  bmw: ['الفئة 3 (G20/F30)', 'الفئة 5 (G30)', 'الفئة 1 (F40)', 'X1', 'X3', 'X5'],
-  audi: ['A3 Sportback', 'A4', 'A6', 'Q3', 'Q5', 'Q8'],
-  toyota: ['ياريس Yaris', 'كورولا Corolla', 'RAV4', 'هيلوكس Hilux', 'لاند كروزر Land Cruiser'],
-  kia: ['سبورتاج Sportage 5 (2022+)', 'سبورتاج Sportage 4', 'بيكانتو Picanto', 'سيلتوس Seltos'],
-  citroen: ['C3 III', 'C4 III', 'C5 Aircross', 'بيرلينجو Berlingo'],
-  fiat: ['500 / 500X', 'تيبو Tipo', 'دوبلو Doblo', 'فيورينو Fiorino']
+  dacia: [
+    'دوكر / إكسبريس (Dokker / Express)',
+    'دوستر 1 (Duster 2010 - 2017)',
+    'دوستر 2 (Duster 2018 - 2024)',
+    'دوستر 3 (Duster 2025 - 2026)'
+  ],
+  renault: [
+    'كليو 4 (Clio 4)',
+    'كليو 5 (Clio 5)',
+    'إكسبريس (Express)'
+  ],
+  peugeot: [
+    '301 (2014 - 2021)',
+    '301 (2020+)',
+    '208 (2022+)',
+    '308 (2020+)',
+    '3008 (2019+)',
+    'بارتنر تيبي (Partner Tepee 2010 - 2020)',
+    'ريفتر (Rifter 2020 - 2024)',
+    'ريفتر (Rifter 2024 - 2026)'
+  ],
+  volkswagen: [
+    'جولف 4 (Golf 4)',
+    'جولف 7 (Golf 7)',
+    'كادي (Caddy 2023+)',
+    'تيجوان (Tiguan 2015 - 2023)'
+  ],
+  hyundai: [
+    'أكسنت (Accent 2012 - 2018)',
+    'توسان / أكسنت (Tucson / Accent 2023+)',
+    'سانتافي (Santa Fe 2013 - 2021)',
+    'سانتافي (Santa Fe 2020 - 2023)'
+  ],
+  mercedes: [
+    'كلاس C (Mercedes W203)',
+    'كلاس C (Mercedes W204 / W205 / W206)'
+  ],
+  nissan: [
+    'قشقاي (Qashqai 2006 - 2014)'
+  ],
+  toyota: [
+    'كورولا كروس (Corolla Cross 2021 - 2022)',
+    'RAV4 (2020 - 2024)'
+  ],
+  kia: [
+    'سبورتاج (Sportage 2023+)'
+  ],
+  audi: [
+    'A3 (Audi A3 2021+)'
+  ],
+  skoda: [
+    'أوكتافيا (Octavia 2015+)'
+  ],
+  seat: [
+    'أتيبيكا (Ateca 2018+)'
+  ],
+  ford: [
+    'فيستا (Fiesta 2009 - 2016)'
+  ],
+  citroen: [
+    'C4 (Citroën C4 2020+)'
+  ],
+  honda: [
+    'CR-V (Honda CR-V 2012 - 2016)'
+  ]
 };
 
 export const PRODUCTS = [
