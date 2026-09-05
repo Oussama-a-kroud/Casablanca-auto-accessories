@@ -12,8 +12,8 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import MobileBottomNav from './components/MobileBottomNav';
 import CartToast from './components/CartToast';
-import { PRODUCTS } from './data/products';
-import { Car, CheckCircle2 } from 'lucide-react';
+import { PRODUCTS, BRANDS } from './data/products';
+import { Car, CheckCircle2, RotateCcw } from 'lucide-react';
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -36,7 +36,6 @@ export default function App() {
     setCart((prevCart) => [...prevCart, productWithDetails]);
     setToastProduct(productWithDetails);
     setShowToast(true);
-    // User requested: Just add to cart & show toast, do NOT open cart drawer automatically!
   };
 
   const handleQuickBuy = (product) => {
@@ -58,10 +57,12 @@ export default function App() {
   };
 
   const filteredProducts = PRODUCTS.filter((product) => {
+    // 1. Category Filter
     if (activeCategory !== 'all' && product.category !== activeCategory) {
       return false;
     }
 
+    // 2. Search Query Filter
     if (searchCar.trim()) {
       const q = searchCar.toLowerCase();
       const matchName = product.name.toLowerCase().includes(q);
@@ -69,6 +70,56 @@ export default function App() {
       const matchCat = product.category.toLowerCase().includes(q);
       if (!matchName && !matchSub && !matchCat) {
         return false;
+      }
+    }
+
+    // 3. Brand / Vehicle Filter
+    if (selectedVehicle && selectedVehicle.brand) {
+      const brandId = selectedVehicle.brand.toLowerCase();
+      
+      // Universal items (Bac de coffre / Pack integral) show up
+      if (product.category === 'coffre' || product.category === 'pack') {
+        return true;
+      }
+
+      const prodId = product.id.toLowerCase();
+      const prodName = product.name.toLowerCase();
+
+      let matchBrand = prodId.includes(brandId) || prodName.includes(brandId);
+      
+      if (!matchBrand) {
+        if (brandId === 'dacia' && (prodId.includes('dokker') || prodId.includes('duster'))) matchBrand = true;
+        if (brandId === 'renault' && (prodId.includes('clio') || prodId.includes('express'))) matchBrand = true;
+        if (brandId === 'peugeot' && (prodId.includes('208') || prodId.includes('301') || prodId.includes('308') || prodId.includes('3008') || prodId.includes('rifter') || prodId.includes('partner'))) matchBrand = true;
+        if (brandId === 'volkswagen' && (prodId.includes('golf') || prodId.includes('caddy') || prodId.includes('tiguan') || prodId.includes('vw'))) matchBrand = true;
+        if (brandId === 'hyundai' && (prodId.includes('accent') || prodId.includes('tucson') || prodId.includes('santafe'))) matchBrand = true;
+        if (brandId === 'mercedes' && prodId.includes('mercedes')) matchBrand = true;
+        if (brandId === 'nissan' && prodId.includes('qashqai')) matchBrand = true;
+        if (brandId === 'toyota' && (prodId.includes('corolla') || prodId.includes('rav4'))) matchBrand = true;
+        if (brandId === 'skoda' && prodId.includes('octavia')) matchBrand = true;
+        if (brandId === 'audi' && prodId.includes('audi')) matchBrand = true;
+        if (brandId === 'seat' && prodId.includes('ateca')) matchBrand = true;
+        if (brandId === 'kia' && prodId.includes('sportage')) matchBrand = true;
+        if (brandId === 'ford' && prodId.includes('fiesta')) matchBrand = true;
+        if (brandId === 'citroen' && prodId.includes('c4')) matchBrand = true;
+        if (brandId === 'honda' && prodId.includes('crv')) matchBrand = true;
+      }
+
+      if (!matchBrand) {
+        return false;
+      }
+
+      // Specific Model sub-filtering if model selected
+      if (selectedVehicle.model) {
+        const modelLower = selectedVehicle.model.toLowerCase();
+        if (modelLower.includes('duster 1') && !prodId.includes('duster-1')) return false;
+        if (modelLower.includes('duster 2') && !prodId.includes('duster-2')) return false;
+        if (modelLower.includes('duster 3') && !prodId.includes('duster-3')) return false;
+        if (modelLower.includes('clio 4') && !prodId.includes('clio-4')) return false;
+        if (modelLower.includes('clio 5') && !prodId.includes('clio-5')) return false;
+        if (modelLower.includes('golf 4') && !prodId.includes('golf-4')) return false;
+        if (modelLower.includes('golf 7') && !prodId.includes('golf-7')) return false;
+        if (modelLower.includes('w203') && !prodId.includes('w203')) return false;
       }
     }
 
@@ -100,51 +151,92 @@ export default function App() {
       />
 
       {/* Hero Banner */}
-      <Hero onFilterVehicle={(veh) => setSelectedVehicle(veh)} />
+      <Hero onFilterVehicle={(veh) => {
+        setSelectedVehicle(veh);
+        scrollToCatalog();
+      }} />
 
       {/* Catalog Section */}
       <main ref={catalogRef} className="flex-1 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 lg:py-10 w-full space-y-6 text-right">
         
         {/* Title & Filter Tabs */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 pb-4">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-red-600" />
-              <span className="text-xs font-bold text-red-600 uppercase tracking-wider">
-                كتالوج طابيات 7D الفاخرة
-              </span>
+        <div className="space-y-4 border-b border-slate-200 pb-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-red-600" />
+                <span className="text-xs font-bold text-red-600 uppercase tracking-wider">
+                  كتالوج طابيات 7D الفاخرة
+                </span>
+              </div>
+              <h2 className="text-lg sm:text-3xl font-extrabold text-slate-900 mt-0.5">
+                طابيات السيارات وأفرشة الصندوق
+              </h2>
+              {selectedVehicle && selectedVehicle.brand && (
+                <div className="text-xs text-emerald-700 font-semibold mt-1 flex items-center gap-2 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-lg w-fit">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>نتائج البحث لسيارة: <strong className="text-slate-900">{selectedVehicle.brand} {selectedVehicle.model} {selectedVehicle.year}</strong></span>
+                  <button
+                    onClick={() => setSelectedVehicle(null)}
+                    className="text-slate-500 hover:text-red-600 underline font-normal text-[11px] mr-2 flex items-center gap-0.5"
+                  >
+                    <RotateCcw className="w-3 h-3" /> إزالة الفلتر
+                  </button>
+                </div>
+              )}
             </div>
-            <h2 className="text-lg sm:text-3xl font-extrabold text-slate-900 mt-0.5">
-              طابيات السيارات وأفرشة الصندوق
-            </h2>
-            {selectedVehicle && selectedVehicle.brand && (
-              <p className="text-xs text-emerald-700 font-semibold mt-1 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" /> الطابيات المطابقة لسيارة :{' '}
-                <strong className="text-slate-900">
-                  {selectedVehicle.brand} {selectedVehicle.model} ({selectedVehicle.year})
-                </strong>
-              </p>
-            )}
+
+            {/* Tabs */}
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+              {[
+                { id: 'all', label: 'جميع الطابيات' },
+                { id: 'habitacle', label: 'طابيات 7D' },
+                { id: 'coffre', label: 'فرش الصندوق' },
+                { id: 'pack', label: 'باك كامل 7D' }
+              ].map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${
+                    activeCategory === cat.id
+                      ? 'bg-red-600 border-red-600 text-white shadow-xs'
+                      : 'bg-white border-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Tabs */}
-          <div className="flex flex-wrap gap-1.5 sm:gap-2">
-            {[
-              { id: 'all', label: 'جميع الطابيات' },
-              { id: 'habitacle', label: 'طابيات 7D' },
-              { id: 'coffre', label: 'فرش الصندوق' },
-              { id: 'pack', label: 'باك كامل 7D' }
-            ].map((cat) => (
+          {/* Brand Quick Filter Bar */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 pt-1 no-scrollbar text-xs border-t border-slate-100 pt-3">
+            <span className="text-slate-500 font-bold text-[11px] shrink-0 ml-1">الماركة:</span>
+            <button
+              onClick={() => setSelectedVehicle(null)}
+              className={`px-3 py-1 rounded-full font-bold whitespace-nowrap transition-all text-[11px] ${
+                !selectedVehicle || !selectedVehicle.brand
+                  ? 'bg-slate-900 text-white shadow-xs'
+                  : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
+              }`}
+            >
+              الكل (جميع الماركات)
+            </button>
+            {BRANDS.map((b) => (
               <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${
-                  activeCategory === cat.id
-                    ? 'bg-red-600 border-red-600 text-white shadow-xs'
-                    : 'bg-white border-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-100'
+                key={b.id}
+                onClick={() => {
+                  setSelectedVehicle({ brand: b.id, model: '', year: '' });
+                  scrollToCatalog();
+                }}
+                className={`px-3 py-1 rounded-full font-bold whitespace-nowrap transition-all text-[11px] flex items-center gap-1 ${
+                  selectedVehicle && selectedVehicle.brand === b.id
+                    ? 'bg-red-600 text-white shadow-xs border border-red-600'
+                    : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
                 }`}
               >
-                {cat.label}
+                <span>{b.logo}</span>
+                <span>{b.name}</span>
               </button>
             ))}
           </div>
