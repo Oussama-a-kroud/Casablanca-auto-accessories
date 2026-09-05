@@ -27,9 +27,20 @@ export default function ProductCard({ product, onSelectProduct, onQuickBuy, onAd
           </span>
         )}
 
+        {/* Mini Tapis Thumbnail Preview Overlay */}
+        {product.secondaryImages && product.secondaryImages.length > 0 && (
+          <div className="absolute bottom-2 left-2 w-11 h-11 rounded-lg overflow-hidden border-2 border-white shadow-md bg-white z-10">
+            <img
+              src={getAssetUrl(product.secondaryImages[0])}
+              alt="معاينة الطابيات 7D"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+
         {/* Selected Vehicle Badge */}
         {selectedVehicle && selectedVehicle.brand && (
-          <div className="absolute bottom-1.5 left-1.5 right-1.5 bg-white/95 text-slate-800 text-[9px] font-semibold py-0.5 px-2 rounded border border-slate-200 flex items-center justify-between shadow-xs">
+          <div className="absolute bottom-1.5 left-1.5 right-1.5 bg-white/95 text-slate-800 text-[9px] font-semibold py-0.5 px-2 rounded border border-slate-200 flex items-center justify-between shadow-xs z-10">
             <span className="truncate">مطابق لسيارتك</span>
             <Check className="w-3 h-3 text-emerald-600 shrink-0" />
           </div>
