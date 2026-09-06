@@ -134,9 +134,12 @@ export const CAR_MODELS = {
     'X3 (BMW X3)'
   ],
   ford: [
-    'فيستا (Fiesta 2009 - 2016)'
+    'فيستا (Fiesta 2009 - 2016)',
+    'كوجا (Ford Kuga)'
   ],
   citroen: [
+    'C3 (Citroën C3)',
+    'C3 إيركروس (C3 Aircross)',
     'C4 (Citroën C4 2020+)',
     'سي إليزيه (Citroën C-Elysée)',
     'نيمو (Citroën Nemo)'
@@ -148,7 +151,8 @@ export const CAR_MODELS = {
     'جوليون (Haval Jolion)'
   ],
   byd: [
-    'جوليون / أتّو (BYD Jolion)'
+    'أتّو / جوليون (BYD Atto 3)',
+    'سيل U (BYD Seal U)'
   ]
 };
 
@@ -1121,7 +1125,7 @@ export const PRODUCTS = [
     rating: 5.0,
     reviewsCount: 160,
     badge: 'BMW X3 SUV VIP ⭐',
-    image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80',
+    image: '/images/bmw_x3_real.png',
     secondaryImages: ['/images/tapis_7d_clean.jpg'],
     features: ['قصة مخصصة لـ BMW X3 SUV', 'حماية شاملة للمقاعد والأرضية', 'مقاوم للزيوت والأتربة'],
     colors: [{ id: 'black', name: 'أسود VIP', hex: '#18181b' }, { id: 'brown', name: 'بني جلد فاخر', hex: '#78350f' }],
@@ -1569,6 +1573,81 @@ export const PRODUCTS = [
     secondaryImages: ['/images/tapis_7d_clean.jpg'],
     features: ['مفصلة بالليزر لموديل Geely Emgrand', 'أزرار التثبيت الأصلية', 'مقاوم للماء والأتربة'],
     colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  
+  // --- CITROEN C3 & C3 AIRCROSS ---
+  {
+    id: 'citroen-c3-7d',
+    name: 'طابيات سيتروين C3 7D (Citroën C3)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة سيتروين C3 الجيل الجديد',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 145,
+    badge: 'Citroën C3 🚘',
+    image: '/images/citroen_c3_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لموديل Citroën C3', 'أزرار التثبيت الأصلية', 'مقاوم للماء والأتربة'],
+    colors: [{ id: 'black', name: 'أسود مات', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'citroen-c3-aircross-7d',
+    name: 'طابيات سيتروين C3 إيركروس 7D (Citroën C3 Aircross)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارة سيتروين C3 Aircross Crossover',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 130,
+    badge: 'C3 Aircross 🚙',
+    image: '/images/citroen_c3_aircross_real.jpg',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['قصة دقيقة لـ C3 Aircross', 'حماية عنائية ومظهر عصري', 'تثبيت محكم بدون انزلاق'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- FORD KUGA ---
+  {
+    id: 'ford-kuga-7d',
+    name: 'طابيات فورد كوجا 7D (Ford Kuga)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارات فورد كوجا SUV',
+    price: 470,
+    originalPrice: 600,
+    rating: 5.0,
+    reviewsCount: 155,
+    badge: 'Ford Kuga SUV 🚙',
+    image: '/images/ford_kuga_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لموديل Ford Kuga', 'أزرار التثبيت الأصلية', 'عزل كامل للموكيت'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- BYD SEAL U ---
+  {
+    id: 'byd-sealu-7d',
+    name: 'طابيات بي واي دي سيل U 7D (BYD Seal U)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارات بي واي دي سيل U الكهربائية والهجينة',
+    price: 480,
+    originalPrice: 620,
+    rating: 5.0,
+    reviewsCount: 110,
+    badge: 'BYD Seal U ⚡',
+    image: '/images/byd_sealu_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['قصة بالليزر خصيصاً لـ BYD Seal U', 'جلد فاخر مقوى عازل للأصوات', 'تثبيت محكم أوريجينال'],
+    colors: [{ id: 'black', name: 'أسود VIP', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
     inStock: true,
     fastDelivery: true
   },
