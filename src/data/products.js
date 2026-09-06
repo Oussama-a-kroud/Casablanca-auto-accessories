@@ -1,4 +1,7 @@
 export const BRANDS = [
+  { id: 'jeep', name: 'جيب (Jeep)', logo: '🚙' },
+  { id: 'geely', name: 'جيلي (Geely)', logo: '🚘' },
+  { id: 'fiat', name: 'فيات (Fiat)', logo: '🚗' },
   { id: 'landrover', name: 'رينج روفر (Range Rover)', logo: '👑' },
   { id: 'opel', name: 'أوبل (Opel)', logo: '⚡' },
   { id: 'dacia', name: 'داسيا (Dacia)', logo: '🚗' },
@@ -22,6 +25,17 @@ export const BRANDS = [
 ];
 
 export const CAR_MODELS = {
+  jeep: [
+    'شيروكي (Jeep Cherokee)'
+  ],
+  geely: [
+    'كولراي (Geely Coolray)',
+    'إمجراند (Geely Emgrand)'
+  ],
+  fiat: [
+    'تيبو (Fiat Tipo)',
+    'فيورينو (Fiat Fiorino)'
+  ],
   landrover: [
     'إيفوك (Range Rover Evoque)',
     'فيلار (Range Rover Velar)'
@@ -42,6 +56,7 @@ export const CAR_MODELS = {
   ],
   peugeot: [
     '208 (2022+)',
+    'بيبر (Peugeot Bipper)',
     '301 (2014 - 2021)',
     '301 (2020+)',
     '308 (2020+)',
@@ -123,7 +138,8 @@ export const CAR_MODELS = {
   ],
   citroen: [
     'C4 (Citroën C4 2020+)',
-    'سي إليزيه (Citroën C-Elysée)'
+    'سي إليزيه (Citroën C-Elysée)',
+    'نيمو (Citroën Nemo)'
   ],
   honda: [
     'CR-V (Honda CR-V 2012 - 2016)'
@@ -322,7 +338,7 @@ export const PRODUCTS = [
     rating: 4.9,
     reviewsCount: 145,
     badge: 'Peugeot 208 🦁',
-    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80',
+    image: '/images/peugeot_208_real.png',
     secondaryImages: ['/images/tapis_7d_clean.jpg'],
     features: ['مفصلة بالليزر لمقاس بيجو 208 2022+', 'أزرار تثبيت أصلية', 'حماية كامة للأرضية والموكيت'],
     colors: [{ id: 'black-red', name: 'أسود بخياطة حمراء سبور', hex: '#991b1b' }, { id: 'black', name: 'أسود كربون', hex: '#18181b' }],
@@ -339,7 +355,7 @@ export const PRODUCTS = [
     rating: 4.8,
     reviewsCount: 160,
     badge: 'Peugeot 301 🏎️',
-    image: 'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=800&q=80',
+    image: '/images/peugeot_301_real.png',
     secondaryImages: ['/images/tapis_7d_clean.jpg'],
     features: ['تطابق دقيق لمقاسات بيجو 301', 'مقاوم للماء والأتربة', 'سريع الجفاف'],
     colors: [{ id: 'black', name: 'أسود أنثراسيت', hex: '#18181b' }],
@@ -356,7 +372,7 @@ export const PRODUCTS = [
     rating: 4.9,
     reviewsCount: 130,
     badge: 'Peugeot 301 (2020+) 🦁',
-    image: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80',
+    image: '/images/peugeot_301_real.png',
     secondaryImages: ['/images/tapis_7d_clean.jpg'],
     features: ['تصميم ليزر مخصص للموديل الحديث', 'تثبيت ممتاز', 'خامات عالية المتانة'],
     colors: [{ id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
@@ -1215,7 +1231,7 @@ export const PRODUCTS = [
     rating: 5.0,
     reviewsCount: 75,
     badge: 'BYD Jolion ⚡',
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+    image: '/images/byd_atto_real.png',
     secondaryImages: ['/images/tapis_7d_clean.jpg'],
     features: ['مفصلة بالليزر لموديلات BYD الحديثة', 'عزل رائع للموكيت', 'تثبيت محكم للغاية'],
     colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
@@ -1418,6 +1434,141 @@ export const PRODUCTS = [
     secondaryImages: ['/images/tapis_7d_clean.jpg'],
     features: ['قصة بالليزر لموديل Range Rover Velar', 'خامة ملكية متينة عازلة للأصوات والرطوبة', 'تثبيت محكم 100%'],
     colors: [{ id: 'black', name: 'أسود ملكي VIP', hex: '#18181b' }, { id: 'brown', name: 'بني جلد فاخر', hex: '#78350f' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  
+  // --- FIAT TIPO ---
+  {
+    id: 'fiat-tipo-7d',
+    name: 'طابيات فيات تيبو 7D (Fiat Tipo)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارات فيات تيبو',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 155,
+    badge: 'Fiat Tipo 🚗',
+    image: '/images/fiat_tipo_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لموديل Fiat Tipo', 'أزرار تثبيت أصلية', 'حماية كاملة للموكيت والدواسات'],
+    colors: [{ id: 'black', name: 'أسود أنثراسيت', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- PEUGEOT BIPPER ---
+  {
+    id: 'peugeot-bipper-7d',
+    name: 'طابيات بيجو بيبر 7D (Peugeot Bipper)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D مخصصة لسيارات بيجو بيبر التجارية والعائلية',
+    price: 460,
+    originalPrice: 580,
+    rating: 4.8,
+    reviewsCount: 120,
+    badge: 'Peugeot Bipper 🚙',
+    image: '/images/peugeot_bipper_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['قصة دقيقة لمقاس Peugeot Bipper', 'هيكل متين للعمل الشاق', 'سهلة الغسل والتجفيف'],
+    colors: [{ id: 'black', name: 'أسود مات', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- CITROEN NEMO ---
+  {
+    id: 'citroen-nemo-7d',
+    name: 'طابيات سيتروين نيمو 7D (Citroën Nemo)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة سيتروين نيمو',
+    price: 460,
+    originalPrice: 580,
+    rating: 4.8,
+    reviewsCount: 115,
+    badge: 'Citroën Nemo 🚗',
+    image: '/images/citroen_nemo_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة لسيارات Citroën Nemo', 'تثبيت محكم بدون انزلاق', 'مقاوم للماء والأتربة'],
+    colors: [{ id: 'black', name: 'أسود مات', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  
+  // --- FIAT FIORINO ---
+  {
+    id: 'fiat-fiorino-7d',
+    name: 'طابيات فيات فيورينو 7D (Fiat Fiorino)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D مخصصة لسيارات فيات فيورينو التجارية والعائلية',
+    price: 460,
+    originalPrice: 580,
+    rating: 4.8,
+    reviewsCount: 130,
+    badge: 'Fiat Fiorino 🚙',
+    image: '/images/fiat_fiorino_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة لسيارات Fiat Fiorino', 'هيكل مقوى للعمل الشاق', 'سهلة التنظيف والتجفيف'],
+    colors: [{ id: 'black', name: 'أسود مات', hex: '#18181b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- JEEP CHEROKEE ---
+  {
+    id: 'jeep-cherokee-7d',
+    name: 'طابيات جيب شيروكي 7D (Jeep Cherokee)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة ومقواة لسيارات جيب شيروكي SUV',
+    price: 480,
+    originalPrice: 620,
+    rating: 5.0,
+    reviewsCount: 165,
+    badge: 'Jeep Cherokee 4x4 🚙',
+    image: '/images/jeep_cherokee_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لـ Jeep Cherokee', 'تحمل الطرق الوعرة والأتربة', 'عزل كامل للماء والأوساخ'],
+    colors: [{ id: 'black', name: 'أسود VIP', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- GEELY COOLRAY ---
+  {
+    id: 'geely-coolray-7d',
+    name: 'طابيات جيلي كولراي 7D (Geely Coolray)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D سبور لسيارة جيلي كولراي Crossover',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 140,
+    badge: 'Geely Coolray ⚡',
+    image: '/images/geely_coolray_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['قصة ليزر 100% لـ Geely Coolray', 'لمسة سبور فاخرة', 'تثبيت محكم بدون انزلاق'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء سبور', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- GEELY EMGRAND ---
+  {
+    id: 'geely-emgrand-7d',
+    name: 'طابيات جيلي إمجراند 7D (Geely Emgrand)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة على المقاس لسيارة جيلي إمجراند',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 125,
+    badge: 'Geely Emgrand 🚘',
+    image: '/images/geely_emgrand_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لموديل Geely Emgrand', 'أزرار التثبيت الأصلية', 'مقاوم للماء والأتربة'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }],
     inStock: true,
     fastDelivery: true
   },
