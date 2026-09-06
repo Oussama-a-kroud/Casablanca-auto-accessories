@@ -1,4 +1,5 @@
 export const BRANDS = [
+  { id: 'landrover', name: 'رينج روفر (Range Rover)', logo: '👑' },
   { id: 'opel', name: 'أوبل (Opel)', logo: '⚡' },
   { id: 'dacia', name: 'داسيا (Dacia)', logo: '🚗' },
   { id: 'renault', name: 'رينو (Renault)', logo: '🚙' },
@@ -21,6 +22,10 @@ export const BRANDS = [
 ];
 
 export const CAR_MODELS = {
+  landrover: [
+    'إيفوك (Range Rover Evoque)',
+    'فيلار (Range Rover Velar)'
+  ],
   dacia: [
     'دوكر / إكسبريس (Dokker / Express)',
     'دوستر 1 (Duster 2010 - 2017)',
@@ -48,6 +53,7 @@ export const CAR_MODELS = {
   volkswagen: [
     'جولف 4 (Golf 4)',
     'جولف 5 (Golf 5)',
+    'جولف 6 (Golf 6)',
     'جولف 7 (Golf 7)',
     'جيتا (Jetta)',
     'تي-روك (T-Roc)',
@@ -93,7 +99,8 @@ export const CAR_MODELS = {
   skoda: [
     'أوكتافيا (Octavia 2009 - 2013)',
     'أوكتافيا (Octavia 2014 - 2022)',
-    'أوكتافيا (Octavia 2022 - 2026)'
+    'أوكتافيا (Octavia 2022 - 2026)',
+    'كودياك (Škoda Kodiaq)'
   ],
   seat: [
     'ليون (Leon 2006 - 2013)',
@@ -625,7 +632,7 @@ export const PRODUCTS = [
     rating: 4.8,
     reviewsCount: 178,
     badge: 'Hyundai Accent 🚘',
-    image: '/images/accent_real.png',
+    image: '/images/accent_new_real.png',
     secondaryImages: ['/images/tapis_7d_clean.jpg'],
     features: ['مفصلة بدقة لـ Accent 2012-2018', 'تثبيت قوي مع أزرار الأرضية', 'سهلة الغسل بالماء'],
     colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
@@ -1336,6 +1343,81 @@ export const PRODUCTS = [
     secondaryImages: ['/images/tapis_7d_clean.jpg'],
     features: ['مفصلة بالليزر لـ Opel Grandland SUV', 'حماية قصوى للأرضية والموكيت', 'تثبيت محكم'],
     colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  
+  // --- VOLKSWAGEN GOLF 6 ---
+  {
+    id: 'vw-golf-6-7d',
+    name: 'طابيات فولكسفاغن جولف 6 7D (VW Golf 6 GTI)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D على المقاس لسيارة فولكسفاغن جولف 6',
+    price: 470,
+    originalPrice: 600,
+    rating: 4.9,
+    reviewsCount: 170,
+    badge: 'VW Golf 6 🚘',
+    image: '/images/golf6_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر لـ Golf 6', 'تثبيت محكم أوريجينال', 'خامة 7D متينة ومقاومة للماء'],
+    colors: [{ id: 'black', name: 'أسود كربون', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء GTI', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- SKODA KODIAQ ---
+  {
+    id: 'skoda-kodiaq-7d',
+    name: 'طابيات شكودا كودياك 7D (Škoda Kodiaq)',
+    category: 'habitacle',
+    subtitle: 'طابيات 7D فاخرة لسيارة شكودا كودياك SUV',
+    price: 480,
+    originalPrice: 620,
+    rating: 5.0,
+    reviewsCount: 140,
+    badge: 'Škoda Kodiaq SUV 🚘',
+    image: '/images/skoda_kodiaq_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['قصة ليزر 100% لموديل Kodiaq SUV', 'أزرار التثبيت الأصلية', 'عزل كلي للموكيت والأرضية'],
+    colors: [{ id: 'black', name: 'أسود VIP', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+
+  // --- RANGE ROVER ---
+  {
+    id: 'landrover-evoque-7d',
+    name: 'طابيات رينج روفر إيفوك 7D (Range Rover Evoque)',
+    category: 'habitacle',
+    subtitle: 'طابيات VIP 7D فاخرة لسيارة رينج روفر إيفوك',
+    price: 490,
+    originalPrice: 650,
+    rating: 5.0,
+    reviewsCount: 195,
+    badge: 'Range Rover Evoque VIP 👑',
+    image: '/images/evoque_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['مفصلة بالليزر خصيصاً لـ Range Rover Evoque', 'جلد فاخر مقوى بخياطة ملكية', 'عزل كامل للماء والأوساخ'],
+    colors: [{ id: 'black', name: 'أسود ملكي VIP', hex: '#18181b' }, { id: 'black-red', name: 'أسود بخياطة حمراء', hex: '#991b1b' }],
+    inStock: true,
+    fastDelivery: true
+  },
+  {
+    id: 'landrover-velar-7d',
+    name: 'طابيات رينج روفر فيلار 7D (Range Rover Velar)',
+    category: 'habitacle',
+    subtitle: 'طابيات VIP 7D فائقة الفخامة لسيارة رينج روفر فيلار',
+    price: 490,
+    originalPrice: 650,
+    rating: 5.0,
+    reviewsCount: 160,
+    badge: 'Range Rover Velar VIP 👑',
+    image: '/images/velar_real.png',
+    secondaryImages: ['/images/tapis_7d_clean.jpg'],
+    features: ['قصة بالليزر لموديل Range Rover Velar', 'خامة ملكية متينة عازلة للأصوات والرطوبة', 'تثبيت محكم 100%'],
+    colors: [{ id: 'black', name: 'أسود ملكي VIP', hex: '#18181b' }, { id: 'brown', name: 'بني جلد فاخر', hex: '#78350f' }],
     inStock: true,
     fastDelivery: true
   },
